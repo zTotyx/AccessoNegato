@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://4oe32qvdyxk7"]
 
-[ext_resource type="Texture2D" uid="uid://cvc7pis8hpsxa" path="res://051aac78-362e-4843-9269-abaf017ef36d.jpg" id="1_grub0"]
+[ext_resource type="Texture2D" uid="uid://cvc7pis8hpsxa" path="res://foto/051aac78-362e-4843-9269-abaf017ef36d.jpg" id="1_grub0"]
 [ext_resource type="PackedScene" uid="uid://bkiqkxqrlnr8x" path="res://player.tscn" id="2_64d67"]
 [ext_resource type="Script" uid="uid://cx2js31vb6sr6" path="res://porta.gd" id="3_26bjb"]
+[ext_resource type="Script" uid="uid://bbc0rkhbscyj4" path="res://uscita.gd" id="4_64d67"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41ae2"]
 
@@ -13,40 +14,38 @@ size = Vector2(1930, 57.5)
 size = Vector2(56.5, 740)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7sie"]
-size = Vector2(20, 286.5)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqnig"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8vr8"]
-size = Vector2(223.25, 203)
+size = Vector2(17, 437.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7e1w"]
 size = Vector2(20, 239.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7sie"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcxb6"]
+size = Vector2(90, 139.5)
+
 [node name="main" type="Node2D" unique_id=685545303]
 
 [node name="sfondo" type="Sprite2D" parent="." unique_id=2054019670]
-position = Vector2(945, 359.00003)
-scale = Vector2(2.274247, 0.57300615)
+position = Vector2(642, 355.50006)
+scale = Vector2(1.5685097, 0.57932705)
 texture = ExtResource("1_grub0")
 
 [node name="Mura" type="StaticBody2D" parent="." unique_id=1046885517]
 physics_material_override = SubResource("PhysicsMaterial_41ae2")
 
 [node name="HitboxNord" type="CollisionShape2D" parent="Mura" unique_id=2055790100]
-position = Vector2(955, -0.5)
+position = Vector2(955, -29.5)
 shape = SubResource("RectangleShape2D_lqnig")
-debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
+debug_color = Color(0.60951173, 9.62615e-08, 0.34359163, 0.41960785)
 
 [node name="HitboxSud" type="CollisionShape2D" parent="Mura" unique_id=374382477]
-position = Vector2(965, 720)
+position = Vector2(965, 749)
 shape = SubResource("RectangleShape2D_lqnig")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
 [node name="HitboxSx" type="CollisionShape2D" parent="Mura" unique_id=1363563362]
-position = Vector2(0, 359)
+position = Vector2(-30, 355)
 shape = SubResource("RectangleShape2D_chyl6")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
@@ -78,7 +77,7 @@ offset_bottom = 29.0
 color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mura" unique_id=1693577436]
-position = Vector2(1905, 111.5)
+position = Vector2(1285.5, 211.375)
 shape = SubResource("RectangleShape2D_s7sie")
 
 [node name="ColorRect" type="ColorRect" parent="Mura" unique_id=231632605]
@@ -99,22 +98,8 @@ offset_right = 1935.0
 offset_bottom = 691.0
 color = Color(1, 0, 0, 1)
 
-[node name="Ostacolo" type="StaticBody2D" parent="." unique_id=1588718470]
-physics_material_override = SubResource("PhysicsMaterial_lqnig")
-
-[node name="temp" type="CollisionShape2D" parent="Ostacolo" unique_id=1777680988]
-position = Vector2(951, 355)
-shape = SubResource("RectangleShape2D_y8vr8")
-
-[node name="ColorRect" type="ColorRect" parent="Ostacolo" unique_id=376452990]
-offset_left = 846.0
-offset_top = 261.0
-offset_right = 1055.0
-offset_bottom = 451.0
-color = Color(0.19607843, 0, 1, 1)
-
 [node name="Player" parent="." unique_id=1356625824 instance=ExtResource("2_64d67")]
-position = Vector2(371, 651)
+position = Vector2(-32, 546)
 scale = Vector2(2, 2)
 speed = 400.0
 
@@ -123,14 +108,14 @@ position = Vector2(-11, 0)
 script = ExtResource("3_26bjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Porta" unique_id=202453455]
-position = Vector2(1920, 598.875)
+position = Vector2(1295, 566.875)
 shape = SubResource("RectangleShape2D_l7e1w")
 
 [node name="ColorRect" type="ColorRect" parent="Porta" unique_id=1339356255]
-offset_left = 1890.0
-offset_top = 479.0
-offset_right = 1930.0
-offset_bottom = 749.0
+offset_left = 1265.0
+offset_top = 430.0
+offset_right = 1305.0
+offset_bottom = 760.0
 color = Color(0.5860161, 0.28649613, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -138,6 +123,14 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Porta/Area2D" unique_id=263734032]
-position = Vector2(1920.0001, 596)
+position = Vector2(1295.0001, 564)
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_s7sie")
+
+[node name="Uscita" type="Area2D" parent="." unique_id=666786576]
+script = ExtResource("4_64d67")
+livello_successivo = "uid://4oe32qvdyxk7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uscita" unique_id=1651265033]
+position = Vector2(1390, 577.25)
+shape = SubResource("RectangleShape2D_wcxb6")

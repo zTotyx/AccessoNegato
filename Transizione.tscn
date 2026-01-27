@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://detsr4e34hpt6"]
+
+[ext_resource type="Script" uid="uid://dfwi27xsx4p5l" path="res://transizione.gd" id="1_edqgm"]
+[ext_resource type="Texture2D" uid="uid://ck2lk48588mvj" path="res://foto/image 1-2.png" id="2_m1jyg"]
+
+[sub_resource type="Animation" id="Animation_edqgm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m1jyg"]
+resource_name = "dissolvenza"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn802"]
+_data = {
+&"RESET": SubResource("Animation_edqgm"),
+&"dissolvenza": SubResource("Animation_m1jyg")
+}
+
+[node name="Transizione" type="CanvasLayer" unique_id=157831395]
+script = ExtResource("1_edqgm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1842054294]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1825407769]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_pn802")
+
+[node name="Foto" type="TextureRect" parent="." unique_id=1986060307]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 3.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m1jyg")

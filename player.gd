@@ -6,6 +6,16 @@ extends CharacterBody2D
 # Godot calcola la gravità automaticamente dalle impostazioni del progetto
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	# 1. Imposta il testo (come prima)
+	if Global.player_id == "":
+		$NomePlayer.text = "Player"
+	else:
+		$NomePlayer.text = Global.player_id
+	
+	# 2. COMANDO NUOVO: Allinea al centro il testo
+	$NomePlayer.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
 func _physics_process(delta):
 	# 1. GRAVITÀ
 	# Se NON siamo sul pavimento, veniamo spinti giù

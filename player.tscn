@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://bkiqkxqrlnr8x"]
 
-[ext_resource type="Script" uid="uid://cocq64hl8213f" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://b2e435h8f2tfv" path="res://Gemini_Generated_Image_5fencb5fencb5fen-removebg-preview.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://cocq64hl8213f" path="res://player.gd" id="1_7omxl"]
+[ext_resource type="Texture2D" uid="uid://dny5k42h8ly0h" path="res://foto/image 6.png" id="2_3c7ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(37, 86)
+size = Vector2(53, 112)
+
+[sub_resource type="SystemFont" id="SystemFont_onrkg"]
+subpixel_positioning = 0
 
 [node name="Player" type="CharacterBody2D" unique_id=1356625824]
-script = ExtResource("1_onrkg")
+script = ExtResource("1_7omxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534795263]
-position = Vector2(73.00002, 31.000011)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_onrkg")
+position = Vector2(73.40001, 28.599998)
+scale = Vector2(0.151, 0.15)
+texture = ExtResource("2_3c7ea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1589395200]
-position = Vector2(-1.5, -19)
+position = Vector2(73, 28)
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="NomePlayer" type="Label" parent="." unique_id=1062873500]
+offset_left = 26.0
+offset_top = -44.0
+offset_right = 122.0
+offset_bottom = -28.0
+theme_override_fonts/font = SubResource("SystemFont_onrkg")
+theme_override_font_sizes/font_size = 10
