@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cflmgefstqqfd"]
+[gd_scene load_steps=4 format=3 uid="uid://cflmgefstqqfd"]
 
 [ext_resource type="Script" uid="uid://dwj7j7538lfav" path="res://menu.gd" id="1_ylpcl"]
 [ext_resource type="FontFile" uid="uid://cs1dtpch6ug5g" path="res://juristdire.ttf" id="2_cx167"]
 [ext_resource type="Script" uid="uid://dt6p53k6fof8u" path="res://Global.gd" id="3_dolsu"]
 
-[node name="MenuPrincipale" type="Control" unique_id=1157833467]
+[node name="MenuPrincipale" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ylpcl")
 
-[node name="Label" type="Label" parent="." unique_id=249244787]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -29,7 +29,7 @@ theme_override_font_sizes/font_size = 80
 text = "Accesso Negato"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1127772394]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,16 +44,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_dolsu")
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=944160790]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 placeholder_text = "Username"
 alignment = 1
 max_length = 10
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=591988916]
+[node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "GIOCA"
 
-[node name="LabelErrore" type="Label" parent="VBoxContainer" unique_id=1890601951]
+[node name="LabelErrore" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)

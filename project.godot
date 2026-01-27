@@ -12,13 +12,13 @@ config_version=5
 
 config/name="fthdhyt"
 run/main_scene="uid://cflmgefstqqfd"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://foto/icon.svg"
 
 [autoload]
 
-Global="*uid://dt6p53k6fof8u"
-Transizione="*uid://detsr4e34hpt6"
+Global="*res://Global.gd"
+Transizione="*res://Transizione.tscn"
 
 [display]
 
