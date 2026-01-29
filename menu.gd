@@ -1,6 +1,9 @@
 extends Control
 
 func _ready():
+	$Music.play()
+	$Music.seek(1.6) # se usi l'offset
+	
 	# 1. Collegamento Bottone (come prima)
 	$VBoxContainer/Button.pressed.connect(_on_gioca_pressed)
 	

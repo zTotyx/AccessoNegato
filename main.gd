@@ -5,12 +5,7 @@ extends Node2D
 
 func _ready():
 	npc2.visible = false
-	# 1. Aspetta 1.5 secondi (o scrivi 1.0 se preferisci)
-	await get_tree().create_timer(1.0).timeout
-	
-	# 2. Fai partire la musica
-	$Music.play()
-	
+
 	npc2.process_mode = Node.PROCESS_MODE_DISABLED
 
 	npc1.npc_finished.connect(_on_npc1_finished)
