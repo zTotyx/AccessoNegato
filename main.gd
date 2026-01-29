@@ -1,9 +1,9 @@
 extends Node2D
 
 
-func _ready():
+#func _ready():
 	# se vuoi che partano sempre appena entri nella scena
-	$VignetteLayer.start()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkiqkxqrlnr8x"]
+[gd_scene format=3 uid="uid://bkiqkxqrlnr8x"]
 
 [ext_resource type="Script" uid="uid://cocq64hl8213f" path="res://player.gd" id="1_7omxl"]
 [ext_resource type="Texture2D" uid="uid://dny5k42h8ly0h" path="res://foto/image 6.png" id="2_3c7ea"]
@@ -63,20 +63,20 @@ size = Vector2(68.5, 141)
 [sub_resource type="SystemFont" id="SystemFont_onrkg"]
 subpixel_positioning = 0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1156499345]
 script = ExtResource("1_7omxl")
 
-[node name="Anim" type="AnimatedSprite2D" parent="."]
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1974989405]
 position = Vector2(81, -7.999998)
 scale = Vector2(0.18333335, 0.19775598)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93574866]
 position = Vector2(82, -8)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="NomePlayer" type="Label" parent="."]
+[node name="NomePlayer" type="Label" parent="." unique_id=1655205231]
 offset_left = 32.0
 offset_top = -94.0
 offset_right = 128.0

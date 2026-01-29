@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnkpwnaasy2ku"]
+[gd_scene format=3 uid="uid://dnkpwnaasy2ku"]
 
 [ext_resource type="PackedScene" uid="uid://bkiqkxqrlnr8x" path="res://player.tscn" id="1_41ae2"]
 [ext_resource type="Script" uid="uid://calytq27060mv" path="res://main.gd" id="1_s7sie"]
@@ -26,33 +26,33 @@ size = Vector2(20, 239.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcxb6"]
 size = Vector2(90, 139.5)
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" unique_id=780106652]
 script = ExtResource("1_s7sie")
 
-[node name="sfondo" type="Sprite2D" parent="."]
+[node name="sfondo" type="Sprite2D" parent="." unique_id=1807983113]
 position = Vector2(636.5, 360.00006)
 scale = Vector2(0.9992189, 0.99589616)
 texture = ExtResource("1_y8vr8")
 
-[node name="Mura" type="StaticBody2D" parent="."]
+[node name="Mura" type="StaticBody2D" parent="." unique_id=2028417598]
 physics_material_override = SubResource("PhysicsMaterial_41ae2")
 
-[node name="HitboxNord" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxNord" type="CollisionShape2D" parent="Mura" unique_id=1518988688]
 position = Vector2(955, -29.5)
 shape = SubResource("RectangleShape2D_lqnig")
 debug_color = Color(0.60951173, 9.62615e-08, 0.34359163, 0.41960785)
 
-[node name="HitboxSud" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxSud" type="CollisionShape2D" parent="Mura" unique_id=1696117194]
 position = Vector2(965, 749)
 shape = SubResource("RectangleShape2D_lqnig")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
-[node name="HitboxSx" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxSx" type="CollisionShape2D" parent="Mura" unique_id=1406903633]
 position = Vector2(-30, 355)
 shape = SubResource("RectangleShape2D_chyl6")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
-[node name="MuroNord" type="ColorRect" parent="Mura"]
+[node name="MuroNord" type="ColorRect" parent="Mura" unique_id=2074684267]
 visible = false
 custom_minimum_size = Vector2(1940, 0)
 offset_left = -11.0
@@ -61,7 +61,7 @@ offset_right = 29.0
 offset_bottom = 29.0
 color = Color(1, 0, 0, 1)
 
-[node name="MuroSud" type="ColorRect" parent="Mura"]
+[node name="MuroSud" type="ColorRect" parent="Mura" unique_id=74436897]
 visible = false
 custom_minimum_size = Vector2(1940, 0)
 offset_left = -10.0
@@ -70,7 +70,7 @@ offset_right = 1940.0
 offset_bottom = 731.0
 color = Color(1, 0, 0, 1)
 
-[node name="MuroSx" type="ColorRect" parent="Mura"]
+[node name="MuroSx" type="ColorRect" parent="Mura" unique_id=1343075712]
 visible = false
 custom_minimum_size = Vector2(0, 740)
 offset_left = -11.0
@@ -79,11 +79,11 @@ offset_right = 29.0
 offset_bottom = 29.0
 color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mura"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mura" unique_id=291900725]
 position = Vector2(1285.5, 211.375)
 shape = SubResource("RectangleShape2D_s7sie")
 
-[node name="ColorRect" type="ColorRect" parent="Mura"]
+[node name="ColorRect" type="ColorRect" parent="Mura" unique_id=841343381]
 visible = false
 custom_minimum_size = Vector2(0, 247)
 offset_left = 1895.0
@@ -92,7 +92,7 @@ offset_right = 1935.0
 offset_bottom = 235.0
 color = Color(1, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Mura"]
+[node name="ColorRect2" type="ColorRect" parent="Mura" unique_id=2020062497]
 visible = false
 custom_minimum_size = Vector2(0, 290)
 offset_left = 1895.0
@@ -101,20 +101,19 @@ offset_right = 1935.0
 offset_bottom = 691.0
 color = Color(1, 0, 0, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_41ae2")]
-position = Vector2(-44, 560)
+[node name="Player" parent="." unique_id=1179980994 instance=ExtResource("1_41ae2")]
+position = Vector2(-44, 594)
 scale = Vector2(2, 2)
-speed = 400.0
 
-[node name="Porta" type="StaticBody2D" parent="."]
+[node name="Porta" type="StaticBody2D" parent="." unique_id=1755336829]
 position = Vector2(-11, 0)
 script = ExtResource("2_lqnig")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta" unique_id=603119671]
 position = Vector2(1295, 566.875)
 shape = SubResource("RectangleShape2D_l7e1w")
 
-[node name="ColorRect" type="ColorRect" parent="Porta"]
+[node name="ColorRect" type="ColorRect" parent="Porta" unique_id=1495175277]
 offset_left = 1265.0
 offset_top = 430.0
 offset_right = 1305.0
@@ -122,20 +121,21 @@ offset_bottom = 760.0
 color = Color(0.5860161, 0.28649613, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="Porta"]
+[node name="Area2D" type="Area2D" parent="Porta" unique_id=1426615837]
 position = Vector2(0, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta/Area2D" unique_id=1725706904]
 position = Vector2(1295.0001, 564)
 scale = Vector2(15, 15)
 shape = SubResource("CircleShape2D_s7sie")
 
-[node name="Uscita" type="Area2D" parent="."]
+[node name="Uscita" type="Area2D" parent="." unique_id=1992493975]
 script = ExtResource("4_y8vr8")
 livello_successivo = "uid://4oe32qvdyxk7"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Uscita"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Uscita" unique_id=1805721842]
 position = Vector2(1390, 577.25)
 shape = SubResource("RectangleShape2D_wcxb6")
 
-[node name="VignetteLayer" parent="." instance=ExtResource("5_l7e1w")]
+[node name="VignetteLayer" parent="." unique_id=1260040811 instance=ExtResource("5_l7e1w")]
+layer = 100

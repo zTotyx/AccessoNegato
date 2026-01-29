@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cobnafej8dvum"]
+[gd_scene format=3 uid="uid://cobnafej8dvum"]
 
 [ext_resource type="Script" uid="uid://8xisechnjg8a" path="res://vignette_layer.gd" id="1_tdrlh"]
 [ext_resource type="Texture2D" uid="uid://clhj3e27t6oms" path="res://foto/dialoghi/Narratore.png" id="2_vs55a"]
@@ -6,23 +6,35 @@
 [ext_resource type="Texture2D" uid="uid://doms3676veu42" path="res://foto/dialoghi/Narratore 3.png" id="4_4csqd"]
 [ext_resource type="Texture2D" uid="uid://dw8b7mo7s2d4g" path="res://foto/dialoghi/Narratore 4.png" id="5_a26tq"]
 [ext_resource type="Texture2D" uid="uid://dochr07bhr63c" path="res://foto/dialoghi/Narratore 5.png" id="6_jfa52"]
+[ext_resource type="Texture2D" uid="uid://dny5k42h8ly0h" path="res://foto/image 6.png" id="7_4csqd"]
 
-[node name="VignetteLayer" type="CanvasLayer"]
+[node name="VignetteLayer" type="CanvasLayer" unique_id=772827609]
 script = ExtResource("1_tdrlh")
 vignette = Array[Texture2D]([ExtResource("2_vs55a"), ExtResource("3_ko4a0"), ExtResource("4_4csqd"), ExtResource("5_a26tq"), ExtResource("6_jfa52")])
+personaggi = Array[Texture2D]([ExtResource("7_4csqd"), ExtResource("7_4csqd"), ExtResource("7_4csqd"), ExtResource("7_4csqd"), ExtResource("7_4csqd")])
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 554.0
-offset_top = 237.0
-offset_right = 746.0
-offset_bottom = 396.0
-color = Color(0, 0, 0, 0.25490198)
-
-[node name="Vignetta" type="TextureRect" parent="."]
+[node name="Vignetta" type="TextureRect" parent="." unique_id=1121141843]
 anchors_preset = -1
 anchor_right = 0.031000001
 anchor_bottom = 0.056
-offset_left = 555.0
-offset_top = 239.0
-offset_right = 707.32
-offset_bottom = 353.68
+offset_left = 702.0
+offset_top = 275.0
+offset_right = 854.32
+offset_bottom = 389.68
+
+[node name="Personaggio" type="TextureRect" parent="." unique_id=491254062]
+visibility_layer = 524288
+offset_left = 61.0
+offset_top = 456.99997
+offset_right = 682.21216
+offset_bottom = 1729.7273
+scale = Vector2(0.198, 0.198)
+texture = ExtResource("7_4csqd")
+expand_mode = 1
+
+[node name="BoxDialogo" type="ColorRect" parent="." unique_id=169482760]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 702.0
+offset_top = 254.0
+offset_right = 1239.0
+offset_bottom = 510.0

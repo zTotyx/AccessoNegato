@@ -1,42 +1,43 @@
 extends CanvasLayer
 
 func cambia_scena(percorso_nuova_scena):
-	# 1. LO SCHERMO DIVENTA NERO
+	# --- FASE 1: CARICAMENTO (Nero -> Foto -> Nero) ---
 	$AnimationPlayer.play("dissolvenza")
 	await $AnimationPlayer.animation_finished
 	
-	# 2. FADE IN FOTO (La foto appare dolcemente)
-	# Assicuriamoci che sia invisibile e trasparente all'inizio
+	# Foto Appare
 	$Foto.visible = true
 	$Foto.modulate.a = 0.0 
+	var tween_in = create_tween()
+	tween_in.tween_property($Foto, "modulate:a", 1.0, 0.5)
+	await tween_in.finished
 	
-	# Creiamo il Tween per portarla da trasparente (0) a visibile (1)
-	var tween_entrata = create_tween()
-	tween_entrata.tween_property($Foto, "modulate:a", 1.0, 0.5) # Dura 0.5 secondi
-	await tween_entrata.finished
-	
-	# 3. ATTESA (Tempo per ammirare la foto)
-	await get_tree().create_timer(1.0).timeout
-	
-	# 4. CAMBIO SCENA (Mentre c'è la foto o il nero)
-	# 4. CAMBIO SCENA
+	# Carica scena
 	get_tree().change_scene_to_file(percorso_nuova_scena)
-
-# aspetta un frame per permettere a Godot di caricare la scena
-	await get_tree().process_frame
-
-# prova a trovare VignetteLayer nella nuova scena e avviala
-	var scena = get_tree().current_scene
-	if scena and scena.has_node("VignetteLayer"):
-		scena.get_node("VignetteLayer").start()
+	await get_tree().process_frame 
 	
-	# 5. FADE OUT FOTO (La foto sparisce dolcemente)
-	var tween_uscita = create_tween()
-	tween_uscita.tween_property($Foto, "modulate:a", 0.0, 0.5) # Dura 0.5 secondi
-	await tween_uscita.finished
-	
-	# Pulizia finale
+	# Foto Sparisce -> Torna il Nero
+	var tween_out = create_tween()
+	tween_out.tween_property($Foto, "modulate:a", 0.0, 0.5)
+	await tween_out.finished
 	$Foto.visible = false
 	
-	# 6. LO SCHERMO TORNA CHIARO
-	$AnimationPlayer.play_backwards("dissolvenza")
+	# --- FASE 2: PAUSA NEL BUIO ---
+	# Ho abbassato a 0.5 secondi. Se lo vuoi più lungo, aumenta questo numero.
+	await get_tree().create_timer(0.5).timeout 
+	
+	# --- FASE 3: VIGNETTA ---
+	var scena = get_tree().current_scene
+	if scena and scena.has_node("VignetteLayer"):
+		var vignetta = scena.get_node("VignetteLayer")
+		
+		# Controllo di sicurezza: La avviamo solo se non è già attiva!
+		if vignetta.has_method("start"): 
+			vignetta.start()
+			
+			# Aspettiamo la fine SOLO se la vignetta prevede il segnale
+			if vignetta.has_signal("dialogo_finito"):
+				await vignetta.dialogo_finito
+			
+	# --- FASE 4: INIZIO GIOCO ---
+	$AnimationPlayer.play_backwards("dissolvenza") 
