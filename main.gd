@@ -1,11 +1,14 @@
 extends Node2D
 
+@onready var npc1 = $"NPC-Worker-1"
+@onready var npc2 = $"NPC-Worker-2"
 
 func _ready():
-	# se vuoi che partano sempre appena entri nella scena
-	$VignetteLayer.start()
+	npc2.visible = false
+	npc2.process_mode = Node.PROCESS_MODE_DISABLED
 
+	npc1.npc_finished.connect(_on_npc1_finished)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_npc1_finished():
+	npc2.visible = true
+	npc2.process_mode = Node.PROCESS_MODE_INHERIT

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnkpwnaasy2ku"]
+[gd_scene load_steps=22 format=3 uid="uid://dnkpwnaasy2ku"]
 
 [ext_resource type="PackedScene" uid="uid://bkiqkxqrlnr8x" path="res://player.tscn" id="1_41ae2"]
 [ext_resource type="Script" uid="uid://calytq27060mv" path="res://main.gd" id="1_s7sie"]
@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://cx2js31vb6sr6" path="res://porta.gd" id="2_lqnig"]
 [ext_resource type="Script" uid="uid://bbc0rkhbscyj4" path="res://uscita.gd" id="4_y8vr8"]
 [ext_resource type="PackedScene" uid="uid://cobnafej8dvum" path="res://vignette_layer.tscn" id="5_l7e1w"]
+[ext_resource type="PackedScene" uid="uid://ce23hm1kw667y" path="res://npc.tscn" id="7_wcxb6"]
+[ext_resource type="PackedScene" uid="uid://cqwy0ewfwyb5w" path="res://npc2.tscn" id="8_o7g6j"]
+[ext_resource type="Script" uid="uid://c2f80ngnd2v46" path="res://npc_2.gd" id="9_qogae"]
+[ext_resource type="Texture2D" uid="uid://cbtpdgcoy32hq" path="res://foto/dialoghi/Work/NPC-2/lavoratore-3.png" id="10_5ur30"]
+[ext_resource type="Texture2D" uid="uid://cstfptfw3lugq" path="res://foto/dialoghi/Work/NPC-2/lavoratore.png" id="10_paha6"]
+[ext_resource type="Texture2D" uid="uid://dw23h73eapdl0" path="res://foto/dialoghi/Work/NPC-2/lavoratore-answ.png" id="12_3bw8a"]
+[ext_resource type="Texture2D" uid="uid://cr70psggy5emv" path="res://foto/dialoghi/Work/NPC-2/lavoratore-1.png" id="12_xl1dm"]
+[ext_resource type="Texture2D" uid="uid://dgnp8hv1pqoia" path="res://foto/dialoghi/Work/NPC-2/lavoratore-2.png" id="13_3bw8a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41ae2"]
 
@@ -138,4 +146,17 @@ livello_successivo = "uid://4oe32qvdyxk7"
 position = Vector2(1390, 577.25)
 shape = SubResource("RectangleShape2D_wcxb6")
 
+[node name="NPC-Worker-1" parent="." instance=ExtResource("7_wcxb6")]
+position = Vector2(501, 379)
+
 [node name="VignetteLayer" parent="." instance=ExtResource("5_l7e1w")]
+
+[node name="NPC-Worker-2" parent="." instance=ExtResource("8_o7g6j")]
+position = Vector2(962, 387)
+script = ExtResource("9_qogae")
+npc_intro = ExtResource("10_5ur30")
+npc_riddle = ExtResource("10_paha6")
+npc_answers = ExtResource("12_3bw8a")
+correct_key = 3
+npc_correct = ExtResource("12_xl1dm")
+npc_wrong = ExtResource("13_3bw8a")

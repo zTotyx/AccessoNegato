@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4fd371flitt4"
-path="res://.godot/imported/Narratore 2.png-84a9bb927d6125e5cd3584dc99317bfe.ctex"
+uid="uid://dgnp8hv1pqoia"
+path="res://.godot/imported/lavoratore-2.png-8a79154f9f983563d81c0f4f6a254ee4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://foto/dialoghi/Narratore 2.png"
-dest_files=["res://.godot/imported/Narratore 2.png-84a9bb927d6125e5cd3584dc99317bfe.ctex"]
+source_file="res://foto/dialoghi/Work/NPC-2/lavoratore-2.png"
+dest_files=["res://.godot/imported/lavoratore-2.png-8a79154f9f983563d81c0f4f6a254ee4.ctex"]
 
 [params]
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://ce23hm1kw667y"]
+
+[ext_resource type="Script" uid="uid://cv7c2nqx7xfpf" path="res://npc.gd" id="1_ideak"]
+[ext_resource type="Texture2D" uid="uid://byjav825uita5" path="res://foto/dialoghi/Work/NPC-1/lavoratore-0.png" id="2_l64hl"]
+[ext_resource type="Texture2D" uid="uid://cbth3rovn3rgf" path="res://foto/personaggi/npc-work/image 29.png" id="2_xxcha"]
+[ext_resource type="Texture2D" uid="uid://uaq7ru7km663" path="res://foto/dialoghi/Work/NPC-1/lavoratore-1.png" id="3_215dd"]
+[ext_resource type="Texture2D" uid="uid://bq3u3vkmbn8lo" path="res://foto/dialoghi/Work/Giocatore/Giocatore2.png" id="3_l64hl"]
+[ext_resource type="Texture2D" uid="uid://bq5fu0ilw7yjj" path="res://foto/dialoghi/Work/NPC-1/lavoratore-2.png" id="4_p5bpe"]
+[ext_resource type="Texture2D" uid="uid://b0vs5kdqd26lu" path="res://foto/dialoghi/Work/NPC-1/lavoratore-4.png" id="6_u41a8"]
+[ext_resource type="Texture2D" uid="uid://c8v174itpnntc" path="res://foto/dialoghi/Work/NPC-1/lavoratore-5.png" id="7_cgete"]
+[ext_resource type="Texture2D" uid="uid://bvn0vtcyhtg0p" path="res://foto/dialoghi/Work/NPC-1/lavoratore-6.png" id="8_gu3sj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l64hl"]
+size = Vector2(156.5, 290.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7lw1"]
+radius = 155.00322
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_ideak")
+npc_intro = ExtResource("2_l64hl")
+player_intro_reply = ExtResource("3_l64hl")
+npc_riddle_block = Array[Texture2D]([ExtResource("3_215dd"), ExtResource("4_p5bpe"), ExtResource("6_u41a8")])
+npc_correct = ExtResource("7_cgete")
+npc_wrong = ExtResource("8_gu3sj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13, 184)
+shape = SubResource("RectangleShape2D_l64hl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 184)
+shape = SubResource("CircleShape2D_v7lw1")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Visual"]
+offset_left = -91.0
+offset_top = 4.0
+offset_right = 79.0
+offset_bottom = 27.0
+text = "Premi E per interagire"
+
+[node name="Sprite2D" type="Sprite2D" parent="Visual"]
+position = Vector2(-10.500008, 177.65974)
+scale = Vector2(0.39166662, 0.39166662)
+texture = ExtResource("2_xxcha")
