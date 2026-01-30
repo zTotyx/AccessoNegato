@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://bkiqkxqrlnr8x"]
 
 [ext_resource type="Script" uid="uid://cocq64hl8213f" path="res://player.gd" id="1_7omxl"]
-[ext_resource type="Texture2D" uid="uid://dny5k42h8ly0h" path="res://foto/image 6.png" id="2_3c7ea"]
-[ext_resource type="Texture2D" uid="uid://dnbm51rt8nfc7" path="res://foto/image 37.png" id="3_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://y41i2puk0npu" path="res://foto/lavoratore-dx.png" id="3_hqtel"]
-[ext_resource type="Texture2D" uid="uid://bucw6tg0u2xfk" path="res://foto/lavoratore-sx.png" id="4_sweqy"]
-[ext_resource type="Texture2D" uid="uid://dewks8afcvgxb" path="res://foto/image 32.png" id="6_dw050"]
-[ext_resource type="Texture2D" uid="uid://d1gxqnx300csp" path="res://foto/image 33.png" id="7_b26j0"]
+[ext_resource type="Texture2D" uid="uid://ceia2u11kg585" path="res://foto/personaggi/player-work/image 6.png" id="2_3c7ea"]
+[ext_resource type="Texture2D" uid="uid://bny2g2sw6g53o" path="res://foto/personaggi/final-player.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://cr3fgfvmvi4go" path="res://foto/personaggi/player-work/lavoratore-dx.png" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://cb7jjs7fci6h2" path="res://foto/personaggi/player-work/lavoratore-sx.png" id="4_sweqy"]
+[ext_resource type="Texture2D" uid="uid://5q3ceoqt1cvt" path="res://foto/personaggi/player-vip/image 32.png" id="6_dw050"]
+[ext_resource type="Texture2D" uid="uid://bf8otumnux6dy" path="res://foto/personaggi/player-vip/image 33.png" id="7_b26j0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
