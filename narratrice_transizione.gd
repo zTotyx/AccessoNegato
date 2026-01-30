@@ -81,7 +81,16 @@ func _go_main_scene() -> void:
 	if main_scene_path == "":
 		push_error("TransizioneDialogo: main_scene_path vuoto!")
 		return
+
+	# usa l'autoload Transizione (res://Transizione.tscn) così parte anche la musica nella scena nuova
+	var t: Node = get_node_or_null("/root/Transizione")
+	if t != null and t.has_method("cambia_scena"):
+		t.call("cambia_scena", main_scene_path)
+		return
+
+	# fallback
 	get_tree().change_scene_to_file(main_scene_path)
+
 
 
 func _fade_out(n: Node, duration: float) -> void:

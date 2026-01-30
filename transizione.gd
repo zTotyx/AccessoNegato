@@ -70,6 +70,7 @@ func _ensure_menu_music_started() -> void:
 
 
 func _get_scene_music(scene: Node) -> AudioStreamPlayer:
+	# Richiede un AudioStreamPlayer chiamato "Music" nel root della scena
 	if scene != null and scene.has_node("Music"):
 		return scene.get_node("Music") as AudioStreamPlayer
 	return null
@@ -160,6 +161,7 @@ func _play_narratrice_monologue() -> void:
 
 
 func cambia_scena(percorso_nuova_scena: String) -> void:
+	# --- Musica scena corrente ---
 	var current_scene: Node = get_tree().current_scene
 	old_music = _get_scene_music(current_scene)
 	if old_music != null:
@@ -182,10 +184,11 @@ func cambia_scena(percorso_nuova_scena: String) -> void:
 	else:
 		push_error("Transizione: manca nodo 'Foto' (TextureRect).")
 
-	# 2b) fade-out musica vecchia, poi stop
+	# 2b) Fade-out musica vecchia, poi stop
 	if old_music != null and old_music.playing:
 		await _fade_music(old_music, _old_music_start_db, FADE_OUT_DB, FADE_OUT_TIME)
 		old_music.stop()
+		# ripristino volume originale per sicurezza
 		old_music.volume_db = _old_music_start_db
 
 	# 3) Hold foto
@@ -209,10 +212,14 @@ func cambia_scena(percorso_nuova_scena: String) -> void:
 	# 6) Torna chiaro
 	await _play_anim_and_wait("dissolvenza", true)
 
-	# 7) Musica nuova: fade-in
+	# 7) Musica nuova: fade-in (vale per principale, livello2, win_room, ecc.)
 	var new_scene: Node = get_tree().current_scene
 	new_music = _get_scene_music(new_scene)
 	if new_music != null:
+		# evita doppie riproduzioni (autoplay o altre chiamate)
+		if new_music.playing:
+			new_music.stop()
+
 		new_music.volume_db = FADE_OUT_DB
 		new_music.play()
 		await _fade_music(new_music, FADE_OUT_DB, 0.0, MAIN_MUSIC_FADE_IN_TIME)

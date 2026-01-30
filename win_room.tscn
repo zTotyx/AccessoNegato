@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhpqvid4gmbpw"]
+[gd_scene format=3 uid="uid://bhpqvid4gmbpw"]
 
 [ext_resource type="PackedScene" uid="uid://dh1onwxmh546s" path="res://player-no-mask.tscn" id="1_7536u"]
 [ext_resource type="Script" uid="uid://diosr6d4xx73s" path="res://win_room.gd" id="1_gpk47"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxjcswbnrqlx" path="res://foto/dialoghi/Narratrice-Finale/Narratore 11.png" id="6_adbx5"]
 [ext_resource type="Texture2D" uid="uid://h1w7uiwag2ba" path="res://foto/dialoghi/Narratrice-Finale/Narratore 12.png" id="7_uygbb"]
 [ext_resource type="Texture2D" uid="uid://bokbgb1dw56gb" path="res://foto/dialoghi/Vittoria.png" id="11_w8twr"]
+[ext_resource type="AudioStream" uid="uid://c3qtcehedwtgd" path="res://Music/Jeremy Blake - Powerup_ ♫ NO COPYRIGHT 8-bit Music [l7SwiFWOQqM].mp3" id="12_4swmd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w8twr"]
 
@@ -23,12 +24,12 @@ size = Vector2(56.5, 740)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adbx5"]
 size = Vector2(17, 437.25)
 
-[node name="WinRoom" type="Node2D"]
+[node name="WinRoom" type="Node2D" unique_id=1197985828]
 script = ExtResource("1_gpk47")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1143925129]
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=698736370]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,16 +41,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.76862746, 0.76862746, 0.76862746, 1)
 
-[node name="PlayerNoMask" parent="." instance=ExtResource("1_7536u")]
+[node name="PlayerNoMask" parent="." unique_id=302169824 instance=ExtResource("1_7536u")]
 position = Vector2(150, 533)
 
-[node name="Narratrice" parent="." instance=ExtResource("2_2awec")]
+[node name="Narratrice" parent="." unique_id=1053985770 instance=ExtResource("2_2awec")]
 position = Vector2(401, 351)
 vignette = Array[Texture2D]([ExtResource("2_rhre8"), ExtResource("3_w8twr"), ExtResource("4_4swmd"), ExtResource("5_fv44n"), ExtResource("6_adbx5"), ExtResource("7_uygbb")])
 
-[node name="VignetteLayer" parent="." instance=ExtResource("3_aes62")]
+[node name="VignetteLayer" parent="." unique_id=1661460854 instance=ExtResource("3_aes62")]
 
-[node name="VictoryImage" type="TextureRect" parent="."]
+[node name="VictoryImage" type="TextureRect" parent="." unique_id=456299282]
 visible = false
 offset_left = 186.0
 offset_top = 261.0
@@ -57,25 +58,25 @@ offset_right = 1128.6805
 offset_bottom = 488.0
 texture = ExtResource("11_w8twr")
 
-[node name="Mura" type="StaticBody2D" parent="."]
+[node name="Mura" type="StaticBody2D" parent="." unique_id=691713572]
 physics_material_override = SubResource("PhysicsMaterial_w8twr")
 
-[node name="HitboxNord" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxNord" type="CollisionShape2D" parent="Mura" unique_id=1541678771]
 position = Vector2(955, -29.5)
 shape = SubResource("RectangleShape2D_4swmd")
 debug_color = Color(0.60951173, 9.62615e-08, 0.34359163, 0.41960785)
 
-[node name="HitboxSud" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxSud" type="CollisionShape2D" parent="Mura" unique_id=2115301298]
 position = Vector2(965, 749)
 shape = SubResource("RectangleShape2D_4swmd")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
-[node name="HitboxSx" type="CollisionShape2D" parent="Mura"]
+[node name="HitboxSx" type="CollisionShape2D" parent="Mura" unique_id=1787911850]
 position = Vector2(-30, 355)
 shape = SubResource("RectangleShape2D_fv44n")
 debug_color = Color(0.3137255, 0.23529412, 0.69411767, 0.41960785)
 
-[node name="MuroNord" type="ColorRect" parent="Mura"]
+[node name="MuroNord" type="ColorRect" parent="Mura" unique_id=1766465500]
 visible = false
 custom_minimum_size = Vector2(1940, 0)
 offset_left = -11.0
@@ -84,7 +85,7 @@ offset_right = 29.0
 offset_bottom = 29.0
 color = Color(1, 0, 0, 1)
 
-[node name="MuroSud" type="ColorRect" parent="Mura"]
+[node name="MuroSud" type="ColorRect" parent="Mura" unique_id=772740409]
 visible = false
 custom_minimum_size = Vector2(1940, 0)
 offset_left = -10.0
@@ -93,7 +94,7 @@ offset_right = 1940.0
 offset_bottom = 731.0
 color = Color(1, 0, 0, 1)
 
-[node name="MuroSx" type="ColorRect" parent="Mura"]
+[node name="MuroSx" type="ColorRect" parent="Mura" unique_id=1334900727]
 visible = false
 custom_minimum_size = Vector2(0, 740)
 offset_left = -11.0
@@ -102,11 +103,11 @@ offset_right = 29.0
 offset_bottom = 29.0
 color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mura"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mura" unique_id=1658805637]
 position = Vector2(1285.5, 211.375)
 shape = SubResource("RectangleShape2D_adbx5")
 
-[node name="ColorRect" type="ColorRect" parent="Mura"]
+[node name="ColorRect" type="ColorRect" parent="Mura" unique_id=514778044]
 visible = false
 custom_minimum_size = Vector2(0, 247)
 offset_left = 1895.0
@@ -115,7 +116,7 @@ offset_right = 1935.0
 offset_bottom = 235.0
 color = Color(1, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Mura"]
+[node name="ColorRect2" type="ColorRect" parent="Mura" unique_id=32775782]
 visible = false
 custom_minimum_size = Vector2(0, 290)
 offset_left = 1895.0
@@ -123,3 +124,6 @@ offset_top = 401.0
 offset_right = 1935.0
 offset_bottom = 691.0
 color = Color(1, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=623427548]
+stream = ExtResource("12_4swmd")

@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ccklcqbml5lck" path="res://foto/dialoghi/VIP/NPC-CompleteVIP/Giocatore2.png" id="17_0stda"]
 [ext_resource type="Texture2D" uid="uid://bxhl7avvtdvvb" path="res://foto/dialoghi/VIP/NPC-CompleteVIP/lavoratore-1.png" id="18_gacdo"]
 [ext_resource type="Texture2D" uid="uid://4befoe4etjt8" path="res://foto/dialoghi/VIP/NPC-CompleteVIP/lavoratore-2.png" id="19_m8nmb"]
+[ext_resource type="AudioStream" uid="uid://csducv6vss7vj" path="res://Music/Monplaisir - Soundtrack ♫ NO COPYRIGHT 8-bit Music [Ddrs6FXIJ-g].mp3" id="20_0stda"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41ae2"]
 
@@ -170,3 +171,6 @@ npc_dialogue_1 = ExtResource("16_hbldq")
 player_reply = ExtResource("17_0stda")
 npc_dialogue_2 = ExtResource("18_gacdo")
 npc_dialogue_3 = ExtResource("19_m8nmb")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1993461317]
+stream = ExtResource("20_0stda")
