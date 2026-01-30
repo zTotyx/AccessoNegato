@@ -14,10 +14,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="fthdhyt"
+config/name="UnMasked"
+config/description="Gioco per la GameJam 2026"
+config/version="1.0.0"
 run/main_scene="uid://cflmgefstqqfd"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://foto/icon.svg"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://cnokpda80bgvd"
 
 [autoload]
 
@@ -83,3 +85,4 @@ next_vignetta={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bder5o14v8vw6"
-path="res://.godot/imported/nera.png-ed750ea38070e54825874d2f6f68ba62.ctex"
+uid="uid://0j3c5i1rqkle"
+path="res://.godot/imported/nera.jpeg-bc405b64e80f06ff4c69492f78040427.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://foto/nera.png"
-dest_files=["res://.godot/imported/nera.png-ed750ea38070e54825874d2f6f68ba62.ctex"]
+source_file="res://foto/nera.jpeg"
+dest_files=["res://.godot/imported/nera.jpeg-bc405b64e80f06ff4c69492f78040427.ctex"]
 
 [params]
 
